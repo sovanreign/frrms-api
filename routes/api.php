@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CalamityController;
+use App\Http\Controllers\EvacuationCenterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('calamities', CalamityController::class);
+Route::apiResource('evacuation-centers', EvacuationCenterController::class);
+Route::get('/evacuation-centers/calamity/{calamityId}', [EvacuationCenterController::class, 'getByCalamity']);

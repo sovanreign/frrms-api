@@ -17,4 +17,9 @@ class Calamity extends Model
         'status',
         'date',
     ];
+
+    public function evacuationCenters()
+    {
+        return $this->hasMany(EvacuationCenter::class);
+    }
 }
